@@ -1,3 +1,9 @@
+xkeyboard-config (2.5-1ubuntu1.3pexip1) pexip; urgency=low
+
+  * Prepare Pexip packaging
+
+ -- John-Mark Bell <jmb@pexip.com>  Wed, 25 Dec 2013 05:27:24 +0000
+
 xkeyboard-config (2.5-1ubuntu1.3) precise-proposed; urgency=low
 
   * Add 113_ossmath_is_five_levels.patch: Some keymaps like fr(oss) fail to

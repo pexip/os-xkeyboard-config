@@ -1,9 +1,10 @@
 Source: xkeyboard-config
 Section: x11
 Priority: extra
-Maintainer: Ubuntu X-SWAT <ubuntu-x@lists.ubuntu.com>
+Maintainer: Pexip AS <packaging@pexip.com>
+XSBC-Pexip-Original-Maintainer: Ubuntu X-SWAT <ubuntu-x@lists.ubuntu.com>
 XSBC-Original-Maintainer: Debian X Strike Force <debian-x@lists.debian.org>
-Uploaders: Cyril Brulebois <kibi@debian.org>
+XSBC-Pexip-Original-Uploaders: Cyril Brulebois <kibi@debian.org>
 Build-Depends:
  debhelper (>= 8),
  dh-autoreconf,
@@ -19,6 +20,7 @@ Standards-Version: 3.9.1
 Vcs-Git: git://git.debian.org/git/pkg-xorg/data/xkb-data
 Vcs-Browser: http://git.debian.org/?p=pkg-xorg/data/xkb-data.git
 Homepage: http://www.freedesktop.org/Software/XKeyboardConfig
+XS-Pexip-Upstream: http://archive.ubuntu.com/ubuntu/ precise
 
 Package: xkb-data
 Depends: ${misc:Depends}
