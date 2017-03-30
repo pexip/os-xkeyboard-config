@@ -20,7 +20,7 @@ Standards-Version: 3.9.1
 Vcs-Git: git://git.debian.org/git/pkg-xorg/data/xkb-data
 Vcs-Browser: http://git.debian.org/?p=pkg-xorg/data/xkb-data.git
 Homepage: http://www.freedesktop.org/Software/XKeyboardConfig
-XS-Pexip-Upstream: http://archive.ubuntu.com/ubuntu/ precise
+XS-Pexip-Upstream: http://ftp.debian.org/debian/ jessie
 
 Package: xkb-data
 Depends: ${misc:Depends}
