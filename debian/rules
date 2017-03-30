@@ -3,14 +3,8 @@
 xkb_base := /usr/share/X11/xkb
 
 override_dh_autoreconf:
-	dh_autoreconf -- sh -c 'intltoolize -c -f && autoreconf -vfi'
-
-override_dh_auto_clean:
-	dh_auto_clean
-	if [ -e $(CURDIR)/po/xkeyboard-config.pot-orig ]; then \
-		mv $(CURDIR)/po/xkeyboard-config.pot-orig \
-		$(CURDIR)/po/xkeyboard-config.pot; \
-	fi
+	intltoolize -c -f
+	AUTOPOINT=true dh_autoreconf autoreconf -- -vfi
 
 override_dh_auto_configure:
 	dh_auto_configure -- \
@@ -18,17 +12,12 @@ override_dh_auto_configure:
 	  --with-xkb-base=$(xkb_base) \
 	  --disable-runtime-deps
 
-override_dh_auto_build:
-	dh_auto_build
-	mv $(CURDIR)/po/xkeyboard-config.pot $(CURDIR)/po/xkeyboard-config.pot-orig
-	cd $(CURDIR)/po && intltool-update -p
-
 override_dh_auto_install:
 	# Regular deb:
-	$(MAKE) -C build install DESTDIR=$(CURDIR)/debian/tmp
+	$(MAKE) -C build install DESTDIR=$(CURDIR)/debian/xkb-data
 
 	# Treat the udeb as an exact copy, but remove messages/pkg-config/man-pages:
-	cp -r $(CURDIR)/debian/tmp/* $(CURDIR)/debian/xkb-data-udeb
+	cp -r $(CURDIR)/debian/xkb-data/* $(CURDIR)/debian/xkb-data-udeb
 	rm -rf $(CURDIR)/debian/xkb-data-udeb/usr/share/locale
 	rm -rf $(CURDIR)/debian/xkb-data-udeb/usr/share/man
 	rm -rf $(CURDIR)/debian/xkb-data-udeb/usr/share/pkgconfig
@@ -44,6 +33,9 @@ override_dh_auto_install:
 override_dh_quilt_unpatch:
 	dh_quilt_unpatch
 	touch rules/base.o_k.part
+
+override_dh_builddeb:
+	dh_builddeb -- -Zxz
 
 %:
 	dh $@ --with quilt,autoreconf --builddirectory=build/
