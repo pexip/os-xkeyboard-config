@@ -1,3 +1,58 @@
+xkeyboard-config (2.19-1+deb9u1) stretch; urgency=medium
+
+  * Non-maintainer upload.
+  * Revert blacklisting of Indic layouts (Closes: #865316)
+    Now Indic keyboards can be selected from list of available keyboard layouts
+    like in previous stable releases. This was reverted upstream as well.
+
+ -- Pirate Praveen <praveen@debian.org>  Tue, 18 Jul 2017 13:08:55 +0530
+
+xkeyboard-config (2.19-1) unstable; urgency=medium
+
+  * New upstream release.
+  * Bump Standards-Version to 3.9.8.
+
+ -- Andreas Boll <andreas.boll.dev@gmail.com>  Thu, 12 Jan 2017 11:40:48 +0100
+
+xkeyboard-config (2.18-1) unstable; urgency=medium
+
+  * Team upload.
+
+  [ Timo Aaltonen ]
+  * New upstream release.
+
+  [ Julien Cristau ]
+  * Update upstream URLs in packaging to use https.
+
+ -- Julien Cristau <jcristau@debian.org>  Sat, 24 Sep 2016 15:07:03 +0200
+
+xkeyboard-config (2.17-1) unstable; urgency=medium
+
+  * New upstream release
+  * Use https instead of git for Vcs-Git.
+
+ -- Julien Cristau <jcristau@debian.org>  Sun, 21 Feb 2016 15:56:50 +0000
+
+xkeyboard-config (2.16-1) unstable; urgency=medium
+
+  * Team upload.
+  * New upstream release.
+  * Bump debhelper compat to 9, Standards-Version to 3.9.6, and update Vcs-*
+    control fields.
+  * Drop dh_builddeb override, xz is the default since dpkg 1.17.0.
+
+ -- Julien Cristau <jcristau@debian.org>  Wed, 28 Oct 2015 15:39:42 +0000
+
+xkeyboard-config (2.14-1) unstable; urgency=medium
+
+  * New upstream release (closes: #776817).
+    - fujitsu_vndr: add a name to xkb_symbols sections (closes: #749006)
+    - Add option to swap right alt & right control (closes: #752680)
+  * Remove Cyril from Uploaders.
+  * Drop fr-oss-rctrl.diff, upstream did a mostly equivalent change.
+
+ -- Julien Cristau <jcristau@debian.org>  Sun, 26 Apr 2015 16:30:30 +0200
+
 xkeyboard-config (2.12-1) unstable; urgency=medium
 
   * New upstream release
