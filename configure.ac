@@ -1,4 +1,4 @@
-AC_INIT(xkeyboard-config, 2.12)
+AC_INIT(xkeyboard-config, 2.19)
 AC_CONFIG_SRCDIR(rules/base.xml.in)
 AM_INIT_AUTOMAKE([foreign dist-bzip2])
 AM_MAINTAINER_MODE
@@ -65,7 +65,7 @@ AM_CONDITIONAL(USE_COMPAT_RULES, test "x$enable_compat_rules" = "xyes")
 # ****
 AC_PROG_INTLTOOL(0.30)
 
-AM_GNU_GETTEXT_VERSION([0.18.1])
+AM_GNU_GETTEXT_VERSION([0.17])
 AM_GNU_GETTEXT([external])
 
 GETTEXT_PACKAGE=xkeyboard-config
@@ -93,6 +93,7 @@ symbols/Makefile
 symbols/digital_vndr/Makefile
 symbols/fujitsu_vndr/Makefile
 symbols/hp_vndr/Makefile
+symbols/jolla_vndr/Makefile
 symbols/macintosh_vndr/Makefile
 symbols/nec_vndr/Makefile
 symbols/nokia_vndr/Makefile
